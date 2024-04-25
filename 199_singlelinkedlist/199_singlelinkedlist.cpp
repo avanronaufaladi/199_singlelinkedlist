@@ -58,4 +58,15 @@ struct Node {
      else return false;
  }
 
+ bool deleteNode(int nim) {
+     Node* current = START;
+     Node* previous = START;
+     if (searchNode(nim, previous, current) == false) return false;
+     previous->next = current->next;
+     if (current == START)
+         START = current->next;
+     delete current;
+     return true;
+ }
+
 
