@@ -106,4 +106,58 @@ struct Node {
      return;
  }
 
+ int main() {
+     int pilihan;
+     do {
+         try {
+             cout << "1. Tambah Data" << endl;
+             cout << "2. Hapus Data" << endl;
+             cout << "3. Tampilkan Data" << endl;
+             cout << "4. Cari Data" << endl;
+             cout << "5. Keluar" << endl;
+             cout << "Pilihan: ";
+             cin >> pilihan;
+
+             switch (pilihan) {
+             case 1:
+                 addNode();
+                 cout << "Data berhasil ditambahkan" << endl;
+                 break;
+             case 2:
+                 if (listEmpty())
+                     cout << "List kosong" << endl;
+                 else {
+                     int nim;
+                     cout << "Masukkan NIM yang ingin dihapus: ";
+                     cin >> nim;
+                     if (deleteNode(nim)) {
+                         cout << "Data dengan NIM " << nim << " berhasil dihapus" << endl;
+                         system("pause");
+                         system("cls");
+                     }
+                     else
+                         cout << "Data tidak ditemukan" << endl;
+                 }
+                 break;
+             case 3:
+                 traverse();
+                 break;
+             case 4:
+                 searchData();
+                 break;
+             case 5:
+            
+               break;
+             default:
+                 cout << "Pilihan tidak valid" << endl;
+                 break;
+             }
+         }
+         catch (exception e) {
+             cout << "terjadi kesalahan" << endl;
+         }
+     } while (pilihan != 5);
+     
+ }
+
 
