@@ -46,4 +46,7 @@ struct Node {
      nodeBaru->next = current;
      previous->next = nodeBaru;
  }
- 
+ bool searchNode(int nim, Node* current, Node* previous) {
+     previous = START;
+     current = START;
+   
